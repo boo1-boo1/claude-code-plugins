@@ -22,8 +22,10 @@ Then install a plugin:
 
 ## Plugins
 
-| Plugin | Description |
-| --- | --- |
-| [basedpyright-lsp](plugins/basedpyright-lsp) | Python language server (basedpyright) for type checking and code intelligence |
-| [black-formatter](plugins/black-formatter) | Python code formatting with Black |
-| [ruff-linter](plugins/ruff-linter) | Python linting and code quality checks with Ruff |
+| Plugin | Description | Command |
+| --- | --- | --- |
+| [basedpyright-lsp](plugins/basedpyright-lsp) | Python language server (basedpyright) for type checking and code intelligence | — |
+| [black-formatter](plugins/black-formatter) | Python code formatting with Black | `/python-format [path]` |
+| [ruff-linter](plugins/ruff-linter) | Python linting and code quality checks with Ruff | `/python-lint [path] [--fix]` |
+
+Commands invoke the plugin's skill explicitly, bypassing auto-detection.

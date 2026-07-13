@@ -1,15 +1,15 @@
-# claude-code-plugins
+# python-tooling-plugins
 
 Marketplace of Claude Code plugins.
 
-Repo: https://github.com/boo1-boo1/claude-code-plugins
+Repo: https://github.com/boo1-boo1/python-tooling-plugins
 
 ## Usage
 
 Add this marketplace in Claude Code:
 
 ```
-/plugin marketplace add boo1-boo1/claude-code-plugins
+/plugin marketplace add boo1-boo1/python-tooling-plugins
 ```
 
 Then install a plugin:

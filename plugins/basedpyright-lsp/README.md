@@ -4,6 +4,18 @@ Python language server (basedpyright) for Claude Code, providing static type che
 
 basedpyright is a fork of Pyright with additional features, stricter defaults, and community-driven fixes.
 
+## Usage
+
+```
+/python-typecheck [path]
+```
+
+Or just ask Claude to type check Python code — the skill auto-triggers.
+
+## LSP
+
+Also registers `basedpyright-langserver --stdio` as a language server for `.py`/`.pyi` files, giving live type checking/code-intelligence via basedpyright's built-in LSP.
+
 ## Supported Extensions
 `.py`, `.pyi`
 

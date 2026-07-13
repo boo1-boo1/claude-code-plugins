@@ -24,9 +24,11 @@ plugins/
     LICENSE
 ```
 
-Two plugin shapes exist:
-- **Skill-based** (`black-formatter`, `ruff-linter`): ships a `plugin.json` + `skills/<name>/SKILL.md`. The skill triggers when Claude detects relevant Python tooling config (e.g. `[tool.black]`/`[tool.ruff]` in `pyproject.toml`) or the user asks directly.
-- **LSP-only** (`basedpyright-lsp`): no `plugin.json` at all. Its `lspServers` block is defined inline in `marketplace.json` instead, mapping file extensions to a language server command.
+All three current plugins (`black-formatter`, `ruff-linter`, `basedpyright-lsp`) are now **skill-based**: each ships a `plugin.json` + `skills/<name>/SKILL.md` + `commands/<name>.md`. The skill triggers when Claude detects relevant Python tooling config (e.g. `[tool.black]`/`[tool.ruff]`/`[tool.basedpyright]` in `pyproject.toml`) or the user asks directly. `ruff-linter` and `basedpyright-lsp` additionally keep an `lspServers` block inline in `marketplace.json` (no `plugin.json` needed for that block alone).
+
+A plugin can also be **LSP-only**: no `plugin.json`, just an `lspServers` block in `marketplace.json` mapping file extensions to a language server command. It becomes hybrid the moment it needs a non-LSP command (e.g. a CLI-driven `/python-typecheck`, as `basedpyright-lsp` did): add `plugin.json` + skill + command to it same as skill-based plugins, keep the `lspServers` block in marketplace.json unchanged.
+
+`lspServers.args` isn't uniform — check the binary's own docs before assuming stdio is default (e.g. `basedpyright-langserver` needs explicit `--stdio`; `ruff server` doesn't).
 
 ## Adding or editing a plugin
 

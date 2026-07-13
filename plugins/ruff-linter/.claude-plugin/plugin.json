@@ -1,0 +1,9 @@
+{
+  "name": "ruff-linter",
+  "description": "Python linting and code quality checks with Ruff - an extremely fast Python linter",
+  "version": "1.0.0",
+  "author": {
+    "name": "boo1-boo1",
+    "email": "38583719+boo1-boo1@users.noreply.github.com"
+  }
+}

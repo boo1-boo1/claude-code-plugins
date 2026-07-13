@@ -2,6 +2,8 @@
 
 Marketplace of Claude Code plugins.
 
+Repo: https://github.com/boo1-boo1/claude-code-plugins
+
 ## Usage
 
 Add this marketplace in Claude Code:

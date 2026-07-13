@@ -18,6 +18,8 @@ plugins/
     skills/
       <skill-name>/
         SKILL.md        # model-invoked skill definition (frontmatter: name, description, version)
+    commands/
+      <name>.md          # slash command (frontmatter: description, argument-hint) that invokes the skill for explicit/manual triggering
     README.md
     LICENSE
 ```
@@ -30,6 +32,7 @@ Two plugin shapes exist:
 
 1. Add/edit the plugin's entry in `.claude-plugin/marketplace.json` (`plugins` array) — this is what makes it installable and is the authoritative list.
 2. For skill-based plugins: create `plugins/<name>/.claude-plugin/plugin.json` and `plugins/<name>/skills/<name>/SKILL.md`. SKILL.md frontmatter description should name the exact trigger phrases (see existing skills for the pattern: "when user asks to X", "when editing Y files in a project that uses Z").
+   Also add `plugins/<name>/commands/<name>.md` — a slash command (frontmatter: `description`, `argument-hint`) whose body tells Claude to invoke the skill, so users can trigger explicitly instead of relying on auto-detection.
 3. For LSP-only plugins: skip `plugin.json`; add the `lspServers` block directly under the plugin's marketplace.json entry.
 4. Update the plugin table in root `README.md`.
 5. Keep `version` fields in sync between `plugin.json` and the marketplace entry.

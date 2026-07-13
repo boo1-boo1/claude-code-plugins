@@ -2,6 +2,14 @@
 
 Python code formatting with Black for Claude Code.
 
+## Usage
+
+```
+/python-format [path]
+```
+
+Or just ask Claude to format Python code — the skill auto-triggers.
+
 ## Installation
 
 ```bash

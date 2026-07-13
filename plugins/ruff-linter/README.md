@@ -2,6 +2,14 @@
 
 Python linting and code quality checks with Ruff for Claude Code.
 
+## Usage
+
+```
+/python-lint [path] [--fix]
+```
+
+Or just ask Claude to lint Python code — the skill auto-triggers.
+
 ## Installation
 
 ```bash

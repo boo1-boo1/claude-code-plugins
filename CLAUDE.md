@@ -35,3 +35,7 @@ Two plugin shapes exist:
 5. Keep `version` fields in sync between `plugin.json` and the marketplace entry.
 
 No CI, no package manager, no build step — validate by checking JSON is well-formed and SKILL.md frontmatter matches the pattern of existing skills.
+
+```bash
+jq empty .claude-plugin/marketplace.json plugins/*/.claude-plugin/plugin.json
+```

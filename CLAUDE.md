@@ -44,3 +44,21 @@ No CI, no package manager, no build step — validate by checking JSON is well-f
 ```bash
 jq empty .claude-plugin/marketplace.json plugins/*/.claude-plugin/plugin.json
 ```
+
+## Versioning
+
+Two independent SemVer counters. Don't conflate them.
+
+**Per-plugin version** — lives in each `plugins/<name>/.claude-plugin/plugin.json` AND the matching marketplace `plugins[]` entry. Keep the two in sync. Bump when *that plugin's* internals change:
+- `major` — remove a capability or otherwise break consumers (e.g. dropping an `lspServers` block a user relied on).
+- `minor` — add a feature (new command, new skill trigger, added LSP).
+- `patch` — fix or docs-only change inside the plugin.
+
+**Marketplace version** — `metadata.version` in `marketplace.json`. Tracks the *catalog*, not any single plugin. Bump when:
+- `major` — remove or rename a plugin, or break the marketplace schema/structure (consumers resolve differently).
+- `minor` — add a plugin to the `plugins` array.
+- `patch` — catalog metadata fixups (owner, description).
+
+A plugin-internal change bumps only that plugin's version, never the marketplace. Catalog membership or shape changing bumps only the marketplace version.
+
+No git tags — Claude Code consumes the marketplace via `/plugin marketplace add` reading HEAD, not tags. Version fields are the source of truth; a git tag would be a purely cosmetic marker and is not maintained.

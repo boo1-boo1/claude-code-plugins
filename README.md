@@ -26,6 +26,6 @@ Then install a plugin:
 | --- | --- | --- |
 | [basedpyright-lsp](plugins/basedpyright-lsp) | Python language server (basedpyright) for type checking and code intelligence (LSP: `basedpyright-langserver`) | `/python-typecheck [path]` |
 | [black-formatter](plugins/black-formatter) | Python code formatting with Black | `/python-format [path]` |
-| [ruff-linter](plugins/ruff-linter) | Python linting and code quality checks with Ruff (LSP: `ruff server`) | `/python-lint [path] [--fix]` |
+| [ruff-linter](plugins/ruff-linter) | Python linting and code quality checks with Ruff | `/python-lint [path] [--fix]` |
 
 Commands invoke the plugin's skill explicitly, bypassing auto-detection.

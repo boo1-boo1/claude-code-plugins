@@ -45,19 +45,7 @@
       "source": "./plugins/ruff-linter",
       "description": "Python linting and code quality checks with Ruff - an extremely fast Python linter",
       "version": "1.0.0",
-      "category": "development",
-      "lspServers": {
-        "ruff": {
-          "command": "ruff",
-          "args": [
-            "server"
-          ],
-          "extensionToLanguage": {
-            ".py": "python",
-            ".pyi": "python"
-          }
-        }
-      }
+      "category": "development"
     }
   ]
 }

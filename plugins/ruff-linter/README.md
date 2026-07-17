@@ -10,10 +10,6 @@ Python linting and code quality checks with Ruff for Claude Code.
 
 Or just ask Claude to lint Python code — the skill auto-triggers.
 
-## LSP
-
-Also registers `ruff server` as a language server for `.py`/`.pyi` files, giving live linting/code-intelligence via Ruff's built-in LSP.
-
 ## Installation
 
 ```bash

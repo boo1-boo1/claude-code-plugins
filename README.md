@@ -37,8 +37,8 @@ Then install a plugin:
 
 | Plugin | Description | Command |
 | --- | --- | --- |
-| [black-formatter](plugins/black-formatter) | Python code formatting with Black | `/python-format [path]` |
-| [ruff-linter](plugins/ruff-linter) | Python linting and code quality checks with Ruff | `/python-lint [path] [--fix]` |
+| [black-formatter](plugins/black-formatter) | Python code formatting with Black, plus a hook that auto-formats on edit | `/python-format [path]` |
+| [ruff-linter](plugins/ruff-linter) | Python linting and code quality checks with Ruff, plus a hook that auto-fixes lint errors on edit | `/python-lint [path] [--fix]` |
 
 **Packaging & dependency management**
 
@@ -51,6 +51,6 @@ Then install a plugin:
 
 | Plugin | Description | Command |
 | --- | --- | --- |
-| [pytest](plugins/pytest) | Python testing with pytest, plus a hook that auto-runs tests after file edits | `/python-test [path\|-k expr\|-m marker]` |
+| [pytest](plugins/pytest) | Python testing with pytest | `/python-test [path\|-k expr\|-m marker]` |
 
 Commands invoke the plugin's skill explicitly, bypassing auto-detection.

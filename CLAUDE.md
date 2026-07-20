@@ -21,7 +21,7 @@ plugins/
     commands/
       <name>.md          # slash command (frontmatter: description, argument-hint) that invokes the skill for explicit/manual triggering
     hooks/
-      hooks.json          # lifecycle hook config (optional, only on plugins that ship one) — see pytest for example
+      hooks.json          # lifecycle hook config (optional, only on plugins that ship one)
     scripts/              # scripts hooks.json invokes, referenced via ${CLAUDE_PLUGIN_ROOT} (sibling of hooks/, not nested)
     README.md
     LICENSE
@@ -33,7 +33,7 @@ A plugin can also be **LSP-only**: no `plugin.json`, just an `lspServers` block 
 
 `lspServers.args` isn't uniform — check the binary's own docs before assuming stdio is default (e.g. `basedpyright-langserver`/`pyright-langserver` need explicit `--stdio`).
 
-A plugin can also ship a **hook** (`hooks/hooks.json` in plugin root + optional `scripts/` it invokes) for automated behavior on lifecycle events (e.g. `pytest`'s `PostToolUse` hook auto-running tests after edits). Reference `${CLAUDE_PLUGIN_ROOT}` for script paths, `${CLAUDE_PROJECT_DIR}` for project-local paths. See [Claude Code plugins reference](https://code.claude.com/docs/en/plugins-reference.md) for the full hook schema.
+A plugin can also ship a **hook** (`hooks/hooks.json` in plugin root + optional `scripts/` it invokes) for automated behavior on lifecycle events (e.g. a `PostToolUse` hook auto-running a check after edits). Reference `${CLAUDE_PLUGIN_ROOT}` for script paths, `${CLAUDE_PROJECT_DIR}` for project-local paths. See [Claude Code plugins reference](https://code.claude.com/docs/en/plugins-reference.md) for the full hook schema.
 
 Plugins are grouped by function in `marketplace.json` and the README table: type checking → formatting/linting → packaging/dependency management → testing. Keep new plugins slotted into the matching group rather than appended at the end.
 

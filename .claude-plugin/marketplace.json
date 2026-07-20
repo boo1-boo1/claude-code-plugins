@@ -60,15 +60,15 @@
     {
       "name": "black-formatter",
       "source": "./plugins/black-formatter",
-      "description": "Python code formatting with Black - the uncompromising code formatter",
-      "version": "1.0.0",
+      "description": "Python code formatting with Black - the uncompromising code formatter, plus a hook that auto-formats on edit",
+      "version": "1.1.0",
       "category": "development"
     },
     {
       "name": "ruff-linter",
       "source": "./plugins/ruff-linter",
-      "description": "Python linting and code quality checks with Ruff - an extremely fast Python linter",
-      "version": "1.0.0",
+      "description": "Python linting and code quality checks with Ruff - an extremely fast Python linter, plus a hook that auto-fixes lint errors on edit",
+      "version": "1.1.0",
       "category": "development"
     },
     {
@@ -88,8 +88,8 @@
     {
       "name": "pytest",
       "source": "./plugins/pytest",
-      "description": "Python testing with pytest - run suites, respect project conventions, and auto-run tests on file changes",
-      "version": "1.0.0",
+      "description": "Python testing with pytest - run suites, respect project conventions",
+      "version": "2.0.0",
       "category": "development"
     }
   ]

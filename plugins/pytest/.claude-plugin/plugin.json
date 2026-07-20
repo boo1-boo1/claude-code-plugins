@@ -1,0 +1,9 @@
+{
+  "name": "pytest",
+  "description": "Python testing with pytest - run suites, respect project conventions, and auto-run tests on file changes",
+  "version": "1.0.0",
+  "author": {
+    "name": "boo1-boo1",
+    "email": "38583719+boo1-boo1@users.noreply.github.com"
+  }
+}

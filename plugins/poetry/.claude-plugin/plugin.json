@@ -1,0 +1,9 @@
+{
+  "name": "poetry",
+  "description": "Python packaging and dependency management with Poetry",
+  "version": "1.0.0",
+  "author": {
+    "name": "boo1-boo1",
+    "email": "38583719+boo1-boo1@users.noreply.github.com"
+  }
+}

@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Marketplace of Claude Code plugins.",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
@@ -34,6 +34,30 @@
       }
     },
     {
+      "name": "pyright-lsp",
+      "description": "Python language server (pyright) for type checking and code intelligence",
+      "version": "1.0.0",
+      "author": {
+        "name": "boo1-boo1",
+        "email": "38583719+boo1-boo1@users.noreply.github.com"
+      },
+      "source": "./plugins/pyright-lsp",
+      "category": "development",
+      "strict": false,
+      "lspServers": {
+        "pyright": {
+          "command": "pyright-langserver",
+          "args": [
+            "--stdio"
+          ],
+          "extensionToLanguage": {
+            ".py": "python",
+            ".pyi": "python"
+          }
+        }
+      }
+    },
+    {
       "name": "black-formatter",
       "source": "./plugins/black-formatter",
       "description": "Python code formatting with Black - the uncompromising code formatter",
@@ -44,6 +68,27 @@
       "name": "ruff-linter",
       "source": "./plugins/ruff-linter",
       "description": "Python linting and code quality checks with Ruff - an extremely fast Python linter",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "uv",
+      "source": "./plugins/uv",
+      "description": "Python packaging and dependency management with uv - Astral's fast package/project manager",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "poetry",
+      "source": "./plugins/poetry",
+      "description": "Python packaging and dependency management with Poetry",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "pytest",
+      "source": "./plugins/pytest",
+      "description": "Python testing with pytest - run suites, respect project conventions, and auto-run tests on file changes",
       "version": "1.0.0",
       "category": "development"
     }

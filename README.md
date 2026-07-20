@@ -38,7 +38,7 @@ Then install a plugin:
 | Plugin | Description | Command |
 | --- | --- | --- |
 | [black-formatter](plugins/black-formatter) | Python code formatting with Black, plus a hook that auto-formats on edit | `/python-format [path]` |
-| [ruff-linter](plugins/ruff-linter) | Python linting and code quality checks with Ruff, plus a hook that auto-fixes lint errors on edit | `/python-lint [path] [--fix]` |
+| [ruff-linter](plugins/ruff-linter) | Python linting and code quality checks with Ruff, plus a hook that lints on edit | `/python-lint [path] [--fix]` |
 
 **Packaging & dependency management**
 

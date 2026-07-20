@@ -20,4 +20,4 @@ is_ruff_project() {
 
 is_ruff_project || exit 0
 
-ruff check --fix --quiet "$FILE_PATH"
+ruff check --quiet "$FILE_PATH"

@@ -19,6 +19,10 @@ Ships a `PostToolUse` hook (`hooks/hooks.json` → `scripts/format-code.sh`) tha
 
 Requires `bash` and `python3` (used to parse the hook's JSON input) on `PATH`.
 
+## Recommended configuration
+
+If a project uses Black but has no `[tool.black]` section yet, the skill offers a `line-length = 100` baseline rather than writing it unasked — matched to the ruff-linter baseline so the two tools agree on wraps. See the skill's SKILL.md for the exact block.
+
 ## Installation
 
 ```bash

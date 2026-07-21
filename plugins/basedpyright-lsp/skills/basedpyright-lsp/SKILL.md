@@ -38,6 +38,20 @@ basedpyright --watch
 
 basedpyright reads config from `pyrightconfig.json` or `[tool.basedpyright]`/`[tool.pyright]` in `pyproject.toml` automatically (strict mode, include/exclude, python version). Don't override those settings with flags unless the user asks.
 
+## Recommended Configuration
+
+basedpyright's defaults are stricter than plain pyright even at basic/standard tiers, and can be noisy on typical projects. If basedpyright is used but no `[tool.basedpyright]` section exists yet, offer (don't auto-apply) this baseline — confirm with the user before writing it:
+
+```toml
+[tool.basedpyright]
+include = ["src"]
+exclude = ["**/__pycache__"]
+typeCheckingMode = "standard"
+reportMissingTypeStubs = "none"
+```
+
+`typeCheckingMode = "standard"` and `reportMissingTypeStubs = "none"` dial back basedpyright's stricter-than-pyright-standard defaults. Adjust `include` to the repo's actual source directory.
+
 ## Installation
 
 ```bash

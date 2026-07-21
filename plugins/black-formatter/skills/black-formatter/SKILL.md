@@ -37,6 +37,18 @@ black --check --diff path/to/file.py
 
 Respect project config automatically — Black reads `[tool.black]` from `pyproject.toml` if present (line-length, target-version, exclude patterns, etc). Don't override those settings with flags unless the user asks.
 
+## Recommended Configuration
+
+If Black is used but no `[tool.black]` section exists yet, offer (don't auto-apply) this baseline as a starting point — confirm with the user before writing it:
+
+```toml
+[tool.black]
+line-length = 100
+target-version = ["py<repo's minimum supported version>"]
+```
+
+`line-length = 100` (not Black's stock 88) pairs well with a Ruff config in the same repo — match both to the same value, or the two tools will disagree on wraps. If the repo also runs Ruff for linting, add `"E501"` to Ruff's ignore list (line length becomes Black's job).
+
 ## Installation
 
 ```bash

@@ -19,6 +19,10 @@ Ships a `PostToolUse` hook (`hooks/hooks.json` → `scripts/lint.sh`) that fires
 
 Requires `bash` and `python3` (used to parse the hook's JSON input) on `PATH`.
 
+## Recommended configuration
+
+If a project uses Ruff but has no `[tool.ruff]` section yet, the skill offers a baseline (`line-length = 100`, a curated `select` list, `preview = true`) rather than writing it unasked. See the skill's SKILL.md for the exact block.
+
 ## Installation
 
 ```bash

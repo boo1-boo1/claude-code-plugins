@@ -12,6 +12,10 @@ Python packaging and dependency management with Poetry, for Claude Code.
 
 Or just ask Claude to add/remove a dependency, install the environment, or run something in the venv — the skill auto-triggers in projects with `poetry.lock` or `[tool.poetry]`.
 
+## No pyproject.toml yet?
+
+If Poetry is invoked in a directory with no `pyproject.toml`, the skill offers to run `poetry init` first, then asks whether to also add recommended baseline config for basedpyright, ruff, and black — nothing gets written unasked.
+
 ## Installation
 
 ```bash

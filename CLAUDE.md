@@ -37,6 +37,10 @@ A plugin can also ship a **hook** (`hooks/hooks.json` in plugin root + optional 
 
 Plugins are grouped by function in `marketplace.json` and the README table: type checking → formatting/linting → packaging/dependency management → testing. Keep new plugins slotted into the matching group rather than appended at the end.
 
+A skill for a formatter/linter/type-checker can include a "Recommended Configuration" section: a baseline config block to *offer* (never auto-write) when the tool is used but has no config yet in `pyproject.toml`. Confirm with the user before writing it. See `ruff-linter`, `black-formatter`, `basedpyright-lsp` SKILL.md for the pattern.
+
+A skill for a packaging/dependency manager (`uv`, `poetry`) can include a "No pyproject.toml Found" section: if invoked with no `pyproject.toml` present, offer to init a new project (`uv init`/`poetry init`) first, then ask whether to also add the recommended config from the formatter/linter/type-checker skills above. Confirm before writing anything. See `uv`, `poetry` SKILL.md for the pattern.
+
 ## Adding or editing a plugin
 
 1. Add/edit the plugin's entry in `.claude-plugin/marketplace.json` (`plugins` array) — this is what makes it installable and is the authoritative list.

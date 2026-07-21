@@ -23,6 +23,16 @@ Check for any of:
 
 If both `poetry.lock` and `uv.lock`/`[tool.uv]` are present, ask which tool is authoritative before running anything — don't guess.
 
+## No pyproject.toml Found
+
+If Poetry is invoked (or the user asks to add/install a dependency) in a directory with no `pyproject.toml`, offer to initialize a new project first:
+
+```bash
+poetry init
+```
+
+After init, ask the user whether they also want recommended baseline config added for basedpyright, ruff, and black (see the basedpyright-lsp, ruff-linter, black-formatter skills for the exact blocks) — don't write any of it unasked.
+
 ## Core Commands
 
 Add a dependency (updates `pyproject.toml` + `poetry.lock` + installs it):

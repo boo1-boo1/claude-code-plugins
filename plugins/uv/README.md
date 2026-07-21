@@ -12,6 +12,10 @@ Python packaging and dependency management with uv, Astral's fast Rust-based pac
 
 Or just ask Claude to add/remove a dependency, sync the environment, or run something in the venv — the skill auto-triggers in projects with `uv.lock` or `[tool.uv]`.
 
+## No pyproject.toml yet?
+
+If uv is invoked in a directory with no `pyproject.toml`, the skill offers to run `uv init` first, then asks whether to also add recommended baseline config for basedpyright, ruff, and black — nothing gets written unasked.
+
 ## Installation
 
 ```bash

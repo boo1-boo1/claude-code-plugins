@@ -44,6 +44,43 @@ Ruff can also format (Black-compatible), if the project prefers a single tool:
 ruff format path/to/file.py
 ```
 
+## Recommended Configuration
+
+If Ruff is used but no `[tool.ruff]` section exists yet, offer (don't auto-apply) this baseline as a starting point — confirm with the user before writing it:
+
+```toml
+[tool.ruff]
+target-version = "py<repo's minimum supported version>"
+line-length = 100
+preview = true
+
+[tool.ruff.lint]
+select = [
+  "ASYNC", # async best practices
+  "B",     # flake8-bugbear
+  "C4",    # flake8-comprehensions
+  "D",     # pydocstyle
+  "DOC",   # pydoclint
+  "E",     # pycodestyle errors
+  "F",     # pyflakes
+  "G",     # flake8-logging-format
+  "I",     # isort
+  "N",     # pep8-naming
+  "PERF",  # performance anti-patterns
+  "RUF",   # ruff-specific rules
+  "SIM",   # flake8-simplify
+  "UP",    # pyupgrade
+  "W",     # pycodestyle warnings
+]
+ignore = [
+  "E501", # line length handled by black
+  "D203", # conflicts with D211
+  "D213", # conflicts with D212
+]
+```
+
+Match `line-length` to whatever Black is configured with in the same repo (see black-formatter skill) — both must agree or Ruff and Black will fight over line breaks.
+
 ## Installation
 
 ```bash

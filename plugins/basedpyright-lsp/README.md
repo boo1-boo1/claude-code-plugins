@@ -19,6 +19,10 @@ Also registers `basedpyright-langserver --stdio` as a language server for `.py`/
 ## Supported Extensions
 `.py`, `.pyi`
 
+## Recommended configuration
+
+basedpyright's defaults are stricter than plain pyright even at basic/standard tiers. If a project uses basedpyright but has no `[tool.basedpyright]` section yet, the skill offers a `typeCheckingMode = "standard"` + `reportMissingTypeStubs = "none"` baseline to dial that back — rather than writing it unasked. See the skill's SKILL.md for the exact block.
+
 ## Installation
 
 Install basedpyright globally via npm:
